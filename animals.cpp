@@ -1,4 +1,6 @@
 #include <iostream>
+#include <windows.h>
+#include <string>
 #include "header.h"
 
 using namespace std;
@@ -18,9 +20,21 @@ void menu()
     cin >> chosen_number;
 }
 
-void main()
+int main()
 {
-    setlocale(LC_ALL, "RUS");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
 
+    List* animal_list = new List;
+    animal_list->Print();
 
+    string animal;
+    int weight, age;
+
+    cout << "Введите название, продолжительность жизни и вес животного: " << endl;
+    getline(cin, animal);
+    cin >> age >> weight;
+    animal_list->Add(animal, age, weight);
+    animal_list->Print();
+    return 0;
 }
