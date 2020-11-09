@@ -1,6 +1,4 @@
 #include <iostream>
-#include <windows.h>
-#include <string>
 #include "header.h"
 
 using namespace std;
